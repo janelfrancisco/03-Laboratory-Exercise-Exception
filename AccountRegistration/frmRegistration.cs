@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,21 +23,61 @@ namespace AccountRegistration
         private int _Age;
         private long _ContactNo;
         private long _StudentNo;
-        
+
+
+        // 9. Copy the methods in 03 Laboratory Exercise 1 - Method.txt file and paste in the frmRegistration class. 
+        public long StudentNumber(string studNum)
+        {
+
+            _StudentNo = long.Parse(studNum);
+
+            return _StudentNo;
+        }
+
+        public long ContactNo(string Contact)
+        {
+            if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
+            {
+                _ContactNo = long.Parse(Contact);
+            }
+
+            return _ContactNo;
+        }
+
+        public string FullName(string LastName, string FirstName, string MiddleInitial)
+        {
+            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
+            {
+                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+            }
+
+            return _FullName;
+        }
+
+        public int Age(string age)
+        {
+            if (Regex.IsMatch(age, @"^[0-9]{1,3}$"))
+            {
+                _Age = Int32.Parse(age);
+            }
+
+            return _Age;
+        }
 
 
 
 
-  /*          [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-    int nLeftRect,        // x-coordinate of upper-left corner
-    int nTopRect,         // y-coordinate of upper-left corner
-    int nRightRect,       // x-coordinate of lower-right corner
-    int nBottomRect,      // y-coordinate of lower-right corner
-    int nWidthEllipse,    // height of ellipse
-    int nHeightEllipse   // width of ellipse
-);
-  */
+
+        /*          [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+              private static extern IntPtr CreateRoundRectRgn(
+          int nLeftRect,        // x-coordinate of upper-left corner
+          int nTopRect,         // y-coordinate of upper-left corner
+          int nRightRect,       // x-coordinate of lower-right corner
+          int nBottomRect,      // y-coordinate of lower-right corner
+          int nWidthEllipse,    // height of ellipse
+          int nHeightEllipse   // width of ellipse
+      );
+        */
         public frmRegistration()
         {
             InitializeComponent();
