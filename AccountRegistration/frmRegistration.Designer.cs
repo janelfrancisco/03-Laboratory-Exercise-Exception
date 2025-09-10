@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tBx_ContactNum = new System.Windows.Forms.TextBox();
+            this.txtContactNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMiddleInitial = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.datePickerBirtday = new System.Windows.Forms.DateTimePicker();
+            this.datePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -157,16 +157,16 @@
             this.label4.Text = "First Name";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // tBx_ContactNum
+            // txtContactNo
             // 
-            this.tBx_ContactNum.BackColor = System.Drawing.Color.Lavender;
-            this.tBx_ContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBx_ContactNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_ContactNum.Location = new System.Drawing.Point(39, 350);
-            this.tBx_ContactNum.Name = "tBx_ContactNum";
-            this.tBx_ContactNum.Size = new System.Drawing.Size(155, 22);
-            this.tBx_ContactNum.TabIndex = 10;
-            this.tBx_ContactNum.TextChanged += new System.EventHandler(this.tBx_ContactNum_TextChanged);
+            this.txtContactNo.BackColor = System.Drawing.Color.Lavender;
+            this.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactNo.Location = new System.Drawing.Point(39, 350);
+            this.txtContactNo.Name = "txtContactNo";
+            this.txtContactNo.Size = new System.Drawing.Size(155, 22);
+            this.txtContactNo.TabIndex = 10;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.tBx_ContactNum_TextChanged);
             // 
             // label5
             // 
@@ -266,12 +266,12 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "ACCOUNT";
             // 
-            // datePickerBirtday
+            // datePickerBirthday
             // 
-            this.datePickerBirtday.Location = new System.Drawing.Point(230, 267);
-            this.datePickerBirtday.Name = "datePickerBirtday";
-            this.datePickerBirtday.Size = new System.Drawing.Size(275, 20);
-            this.datePickerBirtday.TabIndex = 20;
+            this.datePickerBirthday.Location = new System.Drawing.Point(230, 267);
+            this.datePickerBirthday.Name = "datePickerBirthday";
+            this.datePickerBirthday.Size = new System.Drawing.Size(275, 20);
+            this.datePickerBirthday.TabIndex = 20;
             // 
             // label10
             // 
@@ -319,7 +319,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.datePickerBirtday);
+            this.Controls.Add(this.datePickerBirthday);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
@@ -327,7 +327,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMiddleInitial);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.tBx_ContactNum);
+            this.Controls.Add(this.txtContactNo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label4);
@@ -360,7 +360,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tBx_ContactNum;
+        private System.Windows.Forms.TextBox txtContactNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMiddleInitial;
         private System.Windows.Forms.Label label6;
@@ -369,7 +369,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker datePickerBirtday;
+        private System.Windows.Forms.DateTimePicker datePickerBirthday;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Label label11;

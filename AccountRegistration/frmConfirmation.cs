@@ -13,9 +13,19 @@ namespace AccountRegistration
 {
     public partial class frmConfirmation: Form
     {
-        
+        class StudentInformationClass
+        {
+            public int SetStudentNo = 0;
+            public int SetContactNo = 0;
+            public int SetAge = 0;
+            public string SetProgram = " ";
+            public string SetGender = " ";
+            public string SetBirthday = " ";
+            public string SetFullName = " ";
+        }
+
         //for text
-       // private StudentInfoClass.DelegateText DelProgram, DelLastName, DelFirstName, DelMiddleName, DelAddress;
+        // private StudentInfoClass.DelegateText DelProgram, DelLastName, DelFirstName, DelMiddleName, DelAddress;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -53,9 +63,21 @@ namespace AccountRegistration
             DelStudNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetStudentNo); */
         }
 
-
+       
         private void Form2_Load(object sender, EventArgs e)
         {
+            // 11. Double click the frmConfirm to generate a Load event. Then, add the code below
+            StudentInformationClass informationClass = new StudentInformationClass();
+
+            lblStudentNo.Text = informationClass.SetStudentNo.ToString();
+            lblName.Text = informationClass.SetFullName;
+            lblProgram.Text = informationClass.SetProgram;
+            lblBirthday.Text = informationClass.SetBirthday;
+            lblGender.Text = informationClass.SetGender;
+            lblContactNo.Text = informationClass.SetContactNo.ToString();
+            lblAge.Text = informationClass.SetAge.ToString();
+
+
             /*
             lblStudentNo.Text = DelStudNo(StudentInfoClass.StudentNo).ToString();
             lblProgram.Text = DelProgram(StudentInfoClass.Program);

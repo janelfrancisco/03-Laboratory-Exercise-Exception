@@ -17,8 +17,25 @@ namespace AccountRegistration
 
     public partial class frmRegistration : Form
 
-        // 7. In the frmRegistration, create variables for string, int, and long data types. 
+
+
+
+        
     {
+
+        // 4. Create a class named StudentInformationClass with the following static variables
+        class StudentInformationClass
+        {
+            public int SetStudentNo = 0;
+            public int SetContactNo = 0;
+            public int SetAge = 0;
+            public string SetProgram = " ";
+            public string SetGender = " ";
+            public string SetBirthday = " ";
+            public string SetFullName = " ";
+        }
+
+        // 7. In the frmRegistration, create variables for string, int, and long data types. 
         private string _FullName;
         private int _Age;
         private long _ContactNo;
@@ -169,20 +186,34 @@ namespace AccountRegistration
         }
 
         private void btn_Next_Click_1(object sender, EventArgs e)
+
         {
+            // 10. Double click the submit button to generate a click event. Then, add the following code:
+            StudentInformationClass informationClass = new StudentInformationClass();
 
-           /* StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
-            StudentInfoClass.Program = cbPrograms.Text;
-            StudentInfoClass.LastName = txtLastName.Text;
-            StudentInfoClass.FirstName = txtFirstName.Text;
-            StudentInfoClass.MiddleName = txtMiddleInitial.Text;
-            StudentInfoClass.Age = long.Parse(txtAge.Text);
-            StudentInfoClass.ContactNo = long.Parse(tBx_ContactNum.Text);
-           // StudentInfoClass.Address = rTBx_Address.Text;
+            informationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+            informationClass.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
+            informationClass.SetProgram = cbPrograms.Text;
+            informationClass.SetGender = cbGender.Text;
+            informationClass.SetContactNo = (int)ContactNo(txtContactNo.Text);
+            informationClass.SetAge = Age(txtAge.Text);
+            informationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
+            frmConfirmation frm = new frmConfirmation();
+            frm.ShowDialog();
 
-            frmConfirmation Form2 = new frmConfirmation();
-            Form2.Show();
-            this.Hide(); */
+
+            /* StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
+             StudentInfoClass.Program = cbPrograms.Text;
+             StudentInfoClass.LastName = txtLastName.Text;
+             StudentInfoClass.FirstName = txtFirstName.Text;
+             StudentInfoClass.MiddleName = txtMiddleInitial.Text;
+             StudentInfoClass.Age = long.Parse(txtAge.Text);
+             StudentInfoClass.ContactNo = long.Parse(tBx_ContactNum.Text);
+            // StudentInfoClass.Address = rTBx_Address.Text;
+
+             frmConfirmation Form2 = new frmConfirmation();
+             Form2.Show();
+             this.Hide(); */
         }
 
         private void tBx_MidName_TextChanged(object sender, EventArgs e)
