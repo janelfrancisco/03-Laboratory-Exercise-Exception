@@ -13,9 +13,9 @@ namespace AccountRegistration
 {
     public partial class frmConfirmation: Form
     {
-
+        
         //for text
-        private StudentInfoClass.DelegateText DelProgram, DelLastName, DelFirstName, DelMiddleName, DelAddress;
+       // private StudentInfoClass.DelegateText DelProgram, DelLastName, DelFirstName, DelMiddleName, DelAddress;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -36,11 +36,11 @@ namespace AccountRegistration
         }
 
         //for numbers
-        private StudentInfoClass.DelegateNumber DelNumAge, DelNumContactNo, DelStudNo;
+        //private StudentInfoClass.DelegateNumber DelNumAge, DelNumContactNo, DelStudNo;
         public frmConfirmation()
         {
             InitializeComponent();
-
+            /*
             DelProgram = new StudentInfoClass.DelegateText(StudentInfoClass.GetProgram);
             DelLastName = new StudentInfoClass.DelegateText(StudentInfoClass.GetLastName);
             DelFirstName = new StudentInfoClass.DelegateText(StudentInfoClass.GetFirstName);
@@ -50,12 +50,13 @@ namespace AccountRegistration
 
             DelNumAge = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetAge);
             DelNumContactNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetContactNo);
-            DelStudNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetStudentNo);
+            DelStudNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetStudentNo); */
         }
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            /*
             lblStudentNo.Text = DelStudNo(StudentInfoClass.StudentNo).ToString();
             lblProgram.Text = DelProgram(StudentInfoClass.Program);
             lblName.Text = DelLastName(StudentInfoClass.LastName);
@@ -64,6 +65,7 @@ namespace AccountRegistration
             lblGender.Text = DelNumAge(StudentInfoClass.Age).ToString();
             lblContactNo.Text = DelNumContactNo(StudentInfoClass.ContactNo).ToString();
             lblAddress.Text = DelAddress(StudentInfoClass.Address);
+            */
         }
 
 

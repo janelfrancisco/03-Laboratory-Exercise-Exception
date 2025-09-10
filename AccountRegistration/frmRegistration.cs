@@ -16,15 +16,18 @@ namespace AccountRegistration
 
     public partial class frmRegistration : Form
 
-    
-
-
-
-
-
+        // 7. In the frmRegistration, create variables for string, int, and long data types. 
     {
+        private string _FullName;
+        private int _Age;
+        private long _ContactNo;
+        private long _StudentNo;
+        
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+
+
+  /*          [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
     int nLeftRect,        // x-coordinate of upper-left corner
     int nTopRect,         // y-coordinate of upper-left corner
@@ -33,17 +36,20 @@ namespace AccountRegistration
     int nWidthEllipse,    // height of ellipse
     int nHeightEllipse   // width of ellipse
 );
-
+  */
         public frmRegistration()
         {
             InitializeComponent();
+
+
+            /*
             this.FormBorderStyle = FormBorderStyle.None;   // Remove the border
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, this.Height, 20, 20));  // Set rounded corners
-            
+            */
         }
 
 
-        public class StudentInfoClass
+        /* public class StudentInfoClass
 
         {
 
@@ -75,7 +81,7 @@ namespace AccountRegistration
             public static long GetAge(long age) => age;
             public static long GetContactNo(long contactNo) => contactNo;
             public static long GetStudentNo(long studentNo) => studentNo;
-        }
+        } */
 
         private void btn_Next_Click(object sender, EventArgs e)
         {
@@ -112,7 +118,7 @@ namespace AccountRegistration
         private void btn_Next_Click_1(object sender, EventArgs e)
         {
 
-            StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
+           /* StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
             StudentInfoClass.Program = cbPrograms.Text;
             StudentInfoClass.LastName = txtLastName.Text;
             StudentInfoClass.FirstName = txtFirstName.Text;
@@ -123,7 +129,7 @@ namespace AccountRegistration
 
             frmConfirmation Form2 = new frmConfirmation();
             Form2.Show();
-            this.Hide();
+            this.Hide(); */
         }
 
         private void tBx_MidName_TextChanged(object sender, EventArgs e)
