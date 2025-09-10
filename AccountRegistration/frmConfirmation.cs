@@ -13,7 +13,7 @@ namespace AccountRegistration
 {
     public partial class frmConfirmation: Form
     {
-        class StudentInformationClass
+      /*  class StudentInformationClass
         {
             public int SetStudentNo = 0;
             public int SetContactNo = 0;
@@ -22,7 +22,7 @@ namespace AccountRegistration
             public string SetGender = " ";
             public string SetBirthday = " ";
             public string SetFullName = " ";
-        }
+        } */
 
         //for text
         // private StudentInfoClass.DelegateText DelProgram, DelLastName, DelFirstName, DelMiddleName, DelAddress;
@@ -67,15 +67,15 @@ namespace AccountRegistration
         private void Form2_Load(object sender, EventArgs e)
         {
             // 11. Double click the frmConfirm to generate a Load event. Then, add the code below
-            StudentInformationClass informationClass = new StudentInformationClass();
+            
 
-            lblStudentNo.Text = informationClass.SetStudentNo.ToString();
-            lblName.Text = informationClass.SetFullName;
-            lblProgram.Text = informationClass.SetProgram;
-            lblBirthday.Text = informationClass.SetBirthday;
-            lblGender.Text = informationClass.SetGender;
-            lblContactNo.Text = informationClass.SetContactNo.ToString();
-            lblAge.Text = informationClass.SetAge.ToString();
+            lblStudentNo.Text = StudentInformationClass.SetStudentNo.ToString();
+            lblName.Text = StudentInformationClass.SetFullName;
+            lblProgram.Text = StudentInformationClass.SetProgram;
+            lblBirthday.Text = StudentInformationClass.SetBirthday;
+            lblGender.Text = StudentInformationClass.SetGender;
+            lblContactNo.Text = StudentInformationClass.SetContactNo.ToString();
+            lblAge.Text = StudentInformationClass.SetAge.ToString();
 
 
             /*

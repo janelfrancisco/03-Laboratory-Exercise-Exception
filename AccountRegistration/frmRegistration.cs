@@ -22,9 +22,8 @@ namespace AccountRegistration
 
         
     {
-
         // 4. Create a class named StudentInformationClass with the following static variables
-        class StudentInformationClass
+        /*class StudentInformationClass
         {
             public int SetStudentNo = 0;
             public int SetContactNo = 0;
@@ -33,7 +32,8 @@ namespace AccountRegistration
             public string SetGender = " ";
             public string SetBirthday = " ";
             public string SetFullName = " ";
-        }
+        } */
+
 
         // 7. In the frmRegistration, create variables for string, int, and long data types. 
         private string _FullName;
@@ -178,6 +178,18 @@ namespace AccountRegistration
             {
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
             }
+
+            string[] ListOfGender = new string[] { 
+                "Male",
+                "Female"
+            
+            };
+            for (int i = 0; i < 2; i++)
+            {
+                cbGender.Items.Add(ListOfGender[i].ToString());
+            }
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -189,17 +201,39 @@ namespace AccountRegistration
 
         {
             // 10. Double click the submit button to generate a click event. Then, add the following code:
-            StudentInformationClass informationClass = new StudentInformationClass();
+            // Challenge Exercise
+            try
+            {
+                StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+                StudentInformationClass.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
+                StudentInformationClass.SetProgram = cbPrograms.Text;
+                StudentInformationClass.SetGender = cbGender.Text;
+                StudentInformationClass.SetContactNo = (int)ContactNo(txtContactNo.Text);
+                StudentInformationClass.SetAge = Age(txtAge.Text);
+                StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
+                frmConfirmation frm = new frmConfirmation();
+                frm.ShowDialog();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Format Error: " + ex.Message);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Null Error: " + ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show("Overflow Error: " + ex.Message);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show("Index Error: " + ex.Message);
+            }
 
-            informationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            informationClass.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
-            informationClass.SetProgram = cbPrograms.Text;
-            informationClass.SetGender = cbGender.Text;
-            informationClass.SetContactNo = (int)ContactNo(txtContactNo.Text);
-            informationClass.SetAge = Age(txtAge.Text);
-            informationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
-            frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
+
+
+           
 
 
             /* StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
