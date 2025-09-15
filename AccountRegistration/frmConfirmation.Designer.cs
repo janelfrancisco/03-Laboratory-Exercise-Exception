@@ -141,6 +141,7 @@
             this.lblStudentNo.Size = new System.Drawing.Size(42, 17);
             this.lblStudentNo.TabIndex = 21;
             this.lblStudentNo.Text = "LABEL";
+            this.lblStudentNo.Click += new System.EventHandler(this.lblStudentNo_Click);
             // 
             // lblProgram
             // 
@@ -240,7 +241,7 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Birthday";
             // 
-            // Form2
+            // frmConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,7 +263,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.StudNumLbl);
-            this.Name = "Form2";
+            this.Name = "frmConfirmation";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

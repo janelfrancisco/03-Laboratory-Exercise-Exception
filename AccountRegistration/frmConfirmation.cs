@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static AccountRegistration.frmRegistration;
 
 namespace AccountRegistration
@@ -39,8 +41,40 @@ namespace AccountRegistration
 
         private void btn_Next_Click(object sender, EventArgs e)
         {
+            // Storing the data to the database
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    string query = @"INSERT INTO Students 
+                            (StudentNo, Name, Program, Age, Birthday, Gender, ContactNo)
+                            VALUES 
+                            (@StudentNo, @Name, @Program, @Age, @Birthday, @Gender, @ContactNo)";
 
-            MessageBox.Show("Student information submitted successfully!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@StudentNo", lblStudentNo.Text);
+                    cmd.Parameters.AddWithValue("@Name", lblName.Text);
+                    cmd.Parameters.AddWithValue("@Program", lblProgram.Text);
+                    cmd.Parameters.AddWithValue("@Age", int.Parse(lblAge.Text));
+                    cmd.Parameters.AddWithValue("@Birthday", DateTime.Parse(lblBirthday.Text));
+                    cmd.Parameters.AddWithValue("@Gender", lblGender.Text);
+                    cmd.Parameters.AddWithValue("@ContactNo", lblContactNo.Text);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Student information successfully saved!",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving data: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // MessageBox.Show("Student information submitted successfully!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             Application.Exit();
         }
@@ -90,7 +124,9 @@ namespace AccountRegistration
             */
         }
 
+        private void lblStudentNo_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
